@@ -247,21 +247,6 @@ knitr::kable(car_theft_table,
              caption = "*Toronto Neighbourhoods with the Highest Number of Car Thefts*")
 
 
-
-# top_pop <- 
-#   crime_in_toronto_2019 %>% 
-#   arrange(-population) %>% 
-#   slice(1:5)
-# 
-# low_pop<- 
-#   crime_in_toronto_2019 %>% 
-#   arrange(population) %>% 
-#   slice(1:5)
-# 
-# 
-# top_pop
-# low_pop
-
 ```
 
 &nbsp;
@@ -393,17 +378,6 @@ To determine if one Toronto neighbourhood was safer than the others, a compariso
 #https://tex.stackexchange.com/questions/134180/how-do-i-add-citations-at-the-end-of-the-document-as-done-here
 
 
-#citation("tidyverse")
-#citation("here")
-#citation("sf")
-#a <- citation("knitr")
-#print(a, bibtex=TRUE)
-#citation("opendatatoronto")
-#b <- citation("tinytex")
-#print(b, bibtex = TRUE)
-#citation("gridExtra")
-#citation("bibtex")
-#citation("ggplot2")
 ```
 
 
