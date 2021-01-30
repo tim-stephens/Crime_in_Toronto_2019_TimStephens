@@ -75,7 +75,7 @@ raw_data <-
   get_resource()
   
 #Save the raw data as a .csv file for safekeeping
-write_csv(raw_data, here("inputs/data/Crime_Rates_Toronto_Raw.csv"))
+write_csv(raw_data, here("inputs/Data/Crime_Rates_Toronto_Raw.csv"))
 
 
 ```
@@ -86,7 +86,7 @@ write_csv(raw_data, here("inputs/data/Crime_Rates_Toronto_Raw.csv"))
 
 
 #load in the data from the local csv file
-crime_rates_toronto_raw <- read_csv(here("inputs/data/Crime_Rates_Toronto_Raw.csv"))
+crime_rates_toronto_raw <- read_csv(here("inputs/Data/Crime_Rates_Toronto_Raw.csv"))
 
 #only keep columns of interest (major crimes in 2019 and their respective crime rates)
 crime_in_toronto_2019 <- 
@@ -119,11 +119,11 @@ This data was pulled from Toronto’s Open Data Portal – Neighbourhood Crime R
 
 &nbsp;
 
-The dataset does have some biases. First, not all crimes are reported. If people are not confident in their local police force, they may fail to report robberies, breaking and entering, and assault. It is also possible that homicides can go unreported if they are successfully hidden from the police. Additionally, there are many low populated Toronto neighbourhoods, but just a few highly populated ones. Therefore, the trend is relying heavily on just a few datapoints in the high population section of the dataset. To further investigate the trend between crime and population, it could be wise to compare cities and towns within (or between) provinces.
+The dataset has some biases. First, not all crimes are reported. If people are not confident in their local police force, they may fail to report robberies, break-ins, or assaults. It is also possible that homicides can go unreported if they are successfully hidden from the police. Additionally, there are many low populated Toronto neighbourhoods, but just a few highly populated ones. Therefore, the trend is relying heavily on just a few datapoints in the high population section of the dataset. To further investigate the trend between crime and population, it could be wise to compare cities and towns within (or between) provinces.
 
 &nbsp;
 
-Figure 1 shows a plot comparing the number of major crimes committed to the population of different Toronto neighbourhoods. Each point on the graph represents a different neighbourhood. There is a positive trend for assault, breaking-and-entering, robbery, and total crime. However, car-theft and homicide appear to not be affected by population. Although these two crimes do not participate in the trend, the total number of major crimes does increase with population. 
+Figure 1 shows a plot comparing the number of major crimes committed to the population of different Toronto neighbourhoods. Each point on the graph represents a different neighbourhood. There is a positive trend for assault, breaking-and-entering, and robbery. However, car-theft and homicide appear to not be affected by population. Nevertheless, the total number of major crimes does increase with population. 
 
 &nbsp;
 
@@ -214,7 +214,7 @@ grid.arrange(assault_plot,
       
 
 ```
-Figure 1: *Comparing the number of major crimes commited to the population of 140 Toronto neighbourhoods.*
+Figure 1: *Comparing the number of major crimes committed to population for 140 Toronto neighbourhoods.*
 
 &nbsp;
 
@@ -266,7 +266,7 @@ knitr::kable(car_theft_table,
 
 &nbsp;
 
-Table 1 shows that the top neighbourood for car theft is West Humber-Clairville. After doing some research on Toronto.com (https://www.toronto.com/community-static/4544796-west-humber-clairville/), it was found that this neighbourhood is located very close to Toronto Pearson International Airport (Figure 2). Due to long-term overnight parking, unattended vehicles, and the sheer abundance of automobiles, it is likely that proximity to the airport is giving rise to an increase in auto theft. 
+The top neighbourood for car theft is West Humber-Clairville. After doing some research on Toronto.com (https://www.toronto.com/community-static/4544796-west-humber-clairville/), it was found that this neighbourhood is located very close to Toronto Pearson International Airport (Figure 2). Due to long-term overnight parking, unattended vehicles, and the sheer abundance of automobiles, it is likely that proximity to the airport is giving rise to an increase in auto theft. 
 
 
 &nbsp;
@@ -373,7 +373,7 @@ Figure 3: *Comparing the rate of major crimes committed to the population of 140
 
 \newpage
 
-Figure 3 shows that there is a relatively constant rate of crime across Toronto neighbourhoods, regardless of population. An increase in population does not lead to an increase in the proportion of people committing crime - at least in Canada's largest city.
+Figure 3 shows that there is a relatively constant rate of crime across Toronto neighbourhoods, regardless of population. An increase in population does not lead to an increase in the proportion of people committing crimes - at least in Canada's largest city.
 
 # Conclusion
 
