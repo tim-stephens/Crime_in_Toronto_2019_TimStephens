@@ -272,7 +272,7 @@ Table 1 shows that the top neighbourood for car theft is West Humber-Clairville.
 &nbsp;
 
 ```{r, fig.align='center', out.width="40%", out.height="40%", echo=FALSE}
-knitr::include_graphics(path=here("inputs/Images/West_Humber-Clairville_1.png"))
+knitr::include_graphics(path = here("inputs/Images/West_Humber-Clairville_1.png"))
 
 
 #to center the image, I could not find a way to make it work with ![](imagepath.png)
