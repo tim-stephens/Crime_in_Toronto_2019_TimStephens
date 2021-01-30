@@ -119,11 +119,19 @@ This data was pulled from Toronto’s Open Data Portal – Neighbourhood Crime R
 
 &nbsp;
 
-The dataset has some biases. First, not all crimes are reported. If people are not confident in their local police force, they may fail to report robberies, break-ins, or assaults. It is also possible that homicides can go unreported if they are successfully hidden from the police. Additionally, there are many low populated Toronto neighbourhoods, but just a few highly populated ones. Therefore, the trend is relying heavily on just a few datapoints in the high population section of the dataset. To further investigate the trend between crime and population, it could be wise to compare cities and towns within (or between) provinces.
+This dataset was provided by the Toronto Police Services, a reputable source. To build the dataset, crimes reported to the Toronto Police were recorded and eventually stored in a CSV file. Responses were added to the dataset only if the crimes were reported to the police. Crimes in this dataset were organized by their location - a distinct Toronto neighbourhood. The population of the dataset were the inhabitants of Toronto. Due to the nature of this analysis, it was possible to study the population, instead of having to take a sample. 
 
 &nbsp;
 
-Figure 1 shows a plot comparing the number of major crimes committed to the population of different Toronto neighbourhoods. Each point on the graph represents a different neighbourhood. There is a positive trend for assault, breaking-and-entering, and robbery. However, car-theft and homicide appear to not be affected by population. Nevertheless, the total number of major crimes does increase with population. 
+The dataset includes information on reported crime from 2014-2019, however only data from 2019 was analyzed. Included crimes were Assault, Automobile Theft, Breaking and Entering, Robbery, Theft Over, and Homicide. Since "Theft Over" did not specify a dollar value (Theft Over what amount?) it was left out of the analysis. A new variable, "Total Crime", was added to the dataset. This is the total number of reported crimes for each neighbourhood (2019) in the dataset, not including Theft Over.
+
+&nbsp;
+
+The dataset has some biases. First, not all crimes are reported. If people are not confident in their local police force, they may fail to report robberies, break-ins, or assaults. It is also possible that homicides can go unreported if they are successfully hidden from the police. Additionally, there are many low populated Toronto neighbourhoods, but just a few highly populated ones. Therefore, the trend is relying heavily on just a few datapoints in the high population section of the dataset. To further investigate the trend between crime and population, it could be wise to compare cities and towns within (or between) provinces. Another weakness of the dataset is that the population for each neighbourhood was from 2016 census data. This has potential to skew results, as population will have surely changed since then. 
+
+&nbsp;
+
+To start the analysis, an intial plot measuring the total number of crimes commited per neighbourhood was created. Figure 1 compares the number of major crimes committed to the population of different Toronto neighbourhoods. Each point on the graph represents a different neighbourhood. There is a positive trend for assault, breaking-and-entering, and robbery. However, car-theft and homicide appear to be unaffected by population. Nevertheless, the total number of major crimes does increase with population. 
 
 &nbsp;
 
