@@ -14,11 +14,11 @@ The goal of this paper was to determine if some Toronto neighbourhoods were safe
 
 # Introduction 
 
-It is well documented that population growth leads to an increase in the number of crimes committed (@Atlantic; @Nolan; @Korea; @TFG). This rise in crime could occur for multiple reasons. First, there are more opportunities for crime as population increases – more cars to steal, more houses to rob, and more people to attack (@AUSNZ). Second, the criminal will have the opportunity to surround themselves with like-minded individuals, justifying their actions and increasing their likelihood of committing a crime (@AUSNZ). Finally, and perhaps most importantly, there is an increased feeling of anonymity as population density increases (@Atlantic; @AUSNZ). People believe they will not be recognized or caught.  
+It is well documented that population growth leads to an increase in the number of crimes committed (@Atlantic; @Nolan; @Korea; @TFG). This rise in crime could occur for multiple reasons. First, there are more opportunities for crime as population increases – more cars to steal, more houses to rob, and more people to attack (@AUSNZ). Second, the criminal will have the opportunity to surround themselves with like-minded individuals, justifying their actions and increasing their likelihood of committing a crime (@AUSNZ). Finally, and perhaps most importantly, there is an increased feeling of anonymity as the population of an area increases (@Atlantic; @AUSNZ). People believe they will not be recognized or caught. 
 
 &nbsp;
 
-Although the volume of crime increases with population, it is debated whether population has a direct impact on the crime rate (@Sust; @NYCcrime). Crime rate is a measure of crimes committed while accounting for population. Crime rate allows for the comparison of crime across geographical areas with different populations, and in the same area over time. Crime rate is defined as the number of crimes committed per 100,000 people, and can be represented by the following formula (@STATSCAN).
+Although the volume of crime increases with population, it is debated whether population has a direct impact on the crime rate (@Sust; @NYCcrime). Crime rate is a measure of crimes committed per 100,000 people in a certain location. It allows for the comparison of crime across geographical areas with different populations, and in the same area over time. An increase in crime rate implies that a higher percentage of the population commit crimes. It is possible for a certain area to increase its population but have its crime rate stay constant. This implies that although the area is growing, its ratio of inhabitants committing crime does not change. Crime rate is defined by the following formula (@STATSCAN).
 
 &nbsp;
 
@@ -38,7 +38,7 @@ $$\textrm{Crime Rate} = \frac{\textrm{Number of Crimes Commited}}{\textrm{Popula
 
 &nbsp;
 
-This paper looks to investigate the relationship between population, the number of crimes committed, and crime rate. The study will be focussing on 140 distinct Toronto neighbourhoods in 2019. This paper attempts to determine if some areas of Toronto are “safer” than others. Although the general trend for volume of crimes did increase with population, crime rates held relatively constant across neighbourhoods. There may be more crime in “Waterfront Communities-The Island” than in “Beechborough-Greenbrook”, but the ratio of crime per 100,000 inhabitants is similar. Regardless of neighbourhood, inhabitants will be exposed to roughly the same rate of crime. 
+This paper looks to investigate the relationship between population, the number of crimes committed, and crime rate. The study will focus on 140 distinct Toronto neighbourhoods in 2019, and hopes to determine if some areas of Toronto are “safer” than others. After comparing the number of crimes committed to population, the general trend was positive. It appears that highly populated Toronto neighbourhoods have a higher volume of crime. However, crime rates held relatively constant across neighbourhoods. There may be a higher number of crimes in “Waterfront Communities-The Island” than in “Beechborough-Greenbrook”, but the ratio of crime per 100,000 inhabitants is similar. Regardless of neighbourhood, inhabitants will be exposed to roughly the same rate of crime. 
 
 &nbsp;
 
@@ -115,23 +115,23 @@ crime_in_toronto_2019 <-
 
 # Data
 
-This data was pulled from Toronto’s Open Data Portal – Neighbourhood Crime Rates (@CrimeData). Toronto’s Open Data Portal gives users the ability to “generate insights, analyses, and/or…develop web/mobile applications” (@CityOfToronto). The data was analyzed using R(@R). Many packages were used to study the data. Opendatatoronto (@opendatatoronto) and sf (@sf) were used to pull the data from the open data portal. Here (@here) aided in saving and locating files. Knitr (@knitr) was used to create tables. Tidyverse (@tidyverse) was used for general analysis. Ggplot2 (@ggplot2) and gridExtra (@gridExtra) were used to create plots and figures. Tinytex (@tinytex) was used to help write the output to PDF. Finally, bibtex (@bibtex) was used for citations. Files of importance have been uploaded to GitHub for future use or for interest's sake ^[https://github.com/tim-stephens/Crime_in_Toronto_2019_TimStephens].
+This data was taken from Toronto’s Open Data Portal – Neighbourhood Crime Rates (@CrimeData). Toronto’s Open Data Portal gives users the ability to “generate insights, analyses, and/or…develop web/mobile applications” (@CityOfToronto). The data was analyzed using R(@R). Many packages were used to study the data. Opendatatoronto (@opendatatoronto) and sf (@sf) were used to pull the data from the open data portal. Here (@here) aided in saving and locating files. Knitr (@knitr) was used to create tables. Tidyverse (@tidyverse) was used for general analysis. Ggplot2 (@ggplot2) and gridExtra (@gridExtra) were used to create plots and figures. Tinytex (@tinytex) was used to help write the output to PDF. Finally, bibtex (@bibtex) was used for citations. Files of importance have been uploaded to GitHub for future use or for interest's sake ^[https://github.com/tim-stephens/Crime_in_Toronto_2019_TimStephens].
 
 &nbsp;
 
-This dataset was provided by the Toronto Police Services, a reputable source. To build the dataset, crimes reported to the Toronto Police were recorded and eventually stored in a CSV file. Responses were added to the dataset only if the crimes were reported to the police. Crimes in this dataset were organized by their location - a distinct Toronto neighbourhood. The population of the dataset were the inhabitants of Toronto. Due to the nature of this analysis, it was possible to study the population, instead of having to take a sample. 
+This dataset was provided by the Toronto Police Services, a reputable source. To build the dataset, crimes reported to the Toronto Police were recorded and eventually stored in a CSV file. Responses were added to the dataset only if the crimes were reported to the police. Crimes in this dataset were organized by location (a distinct Toronto neighbourhood) and by year. The population of the dataset were the inhabitants of Toronto. Due to the nature of this analysis, it was possible to study the population, instead of having to take a sample. 
 
 &nbsp;
 
-The dataset includes information on reported crime from 2014-2019, however only data from 2019 was analyzed. Included crimes were Assault, Automobile Theft, Breaking and Entering, Robbery, Theft Over, and Homicide. Since "Theft Over" did not specify a dollar value (Theft Over what amount?) it was left out of the analysis. A new variable, "Total Crime", was added to the dataset. This is the total number of reported crimes for each neighbourhood (2019) in the dataset, not including Theft Over.
+The dataset includes information on reported crime from 2014-2019, however only data from 2019 was analyzed. Included crimes were Assault, Automobile Theft, Breaking and Entering, Robbery, Theft Over, and Homicide. Since "Theft Over" did not specify a dollar value (theft over what amount?) it was left out of the analysis. A new variable, "Total Crime", was added to the dataset. This represents the total number of reported crimes for each neighbourhood (2019) in the dataset, not including Theft Over. This study focused on variables including data about the number of crimes committed in 2019 and the 2019 crime rate for the crimes listed above. 
 
 &nbsp;
 
-The dataset has some biases. First, not all crimes are reported. If people are not confident in their local police force, they may fail to report robberies, break-ins, or assaults. It is also possible that homicides can go unreported if they are successfully hidden from the police. Additionally, there are many low populated Toronto neighbourhoods, but just a few highly populated ones. Therefore, the trend is relying heavily on just a few datapoints in the high population section of the dataset. To further investigate the trend between crime and population, it could be wise to compare cities and towns within (or between) provinces. Another weakness of the dataset is that the population for each neighbourhood was from 2016 census data. This has potential to skew results, as population will have surely changed since then. 
+The dataset has some biases. First, not all crimes are reported. If people are not confident in their local police force, they may fail to report robberies, break-ins, or assaults. It is also possible that homicides can go unreported if they are successfully hidden from the police. Additionally, there are many sparsely populated Toronto neighbourhoods, but just a few highly populated ones. Therefore, the trend is relying heavily on just a few datapoints in the high population section of the dataset. To further investigate the trend between crime and population, it could be wise to compare cities and towns within (or between) provinces. The reported population for each neighbourhood is from the 2016 census. This has potential to skew results, as population will have surely changed since then. 
 
 &nbsp;
 
-To start the analysis, an intial plot measuring the total number of crimes commited per neighbourhood was created. Figure 1 compares the number of major crimes committed to the population of different Toronto neighbourhoods. Each point on the graph represents a different neighbourhood. There is a positive trend for assault, breaking-and-entering, and robbery. However, car-theft and homicide appear to be unaffected by population. Nevertheless, the total number of major crimes does increase with population. 
+To start the analysis, an initial plot measuring the total number of crimes committed per neighbourhood was created. Figure 1 compares the number of major crimes committed to the population of different Toronto neighbourhoods. Each point on the graph represents a different neighbourhood. There is a positive trend for assault, breaking-and-entering, and robbery. However, car-theft and homicide appear to be unaffected by population. Nevertheless, the total number of major crimes does increase with population. 
 
 &nbsp;
 
@@ -259,7 +259,7 @@ knitr::kable(car_theft_table,
 
 &nbsp;
 
-The top neighbourood for car theft is West Humber-Clairville. After doing some research on Toronto.com (https://www.toronto.com/community-static/4544796-west-humber-clairville/), it was found that this neighbourhood is located very close to Toronto Pearson International Airport (Figure 2). Due to long-term overnight parking, unattended vehicles, and the sheer abundance of automobiles, it is likely that proximity to the airport is giving rise to an increase in auto theft. 
+The top neighbourood for car theft is West Humber-Clairville. After doing some research on Toronto.com (@toronto.com), it was found that this neighbourhood is located very close to Toronto Pearson International Airport (Figure 2). Due to long-term overnight parking, unattended vehicles, and the sheer abundance of automobiles, it is likely that proximity to the airport is giving rise to an increase in auto theft. 
 
 
 &nbsp;
@@ -283,7 +283,7 @@ Figure 2:
 
 &nbsp;
 
-Although the number of crimes committed was proportional to the population, further analysis was conducted to see if crime rates also differed due to population. If the crime rate is positively correlated to population, then it can be inferred that as population density increases, a higher percentage of people will commit crimes. If crime rate stays constant, then we can infer that even with an increase in population, the same proportion of people will commit crimes. Figure 3 compares crime rates for different major crimes against neighbourhood populations. 
+Although the number of crimes committed was proportional to the population, further analysis was conducted to see if crime rates also differed due to population. If the crime rate is positively correlated to population, then it can be inferred that as population increases, a higher percentage of people will commit crimes. If crime rate stays constant, then even with an increase in population, the same proportion of people will commit crimes. Figure 3 compares crime rates for different major crimes against neighbourhood populations. 
 
 &nbsp;
 
@@ -370,7 +370,7 @@ Figure 3 shows that there is a relatively constant rate of crime across Toronto 
 
 # Conclusion
 
-To determine if one Toronto neighbourhood was safer than the others, a comparison of the number of crimes committed was compared across neighbourhoods. It was apparent that with an increase in population, there was an increase in crime. However, the rate of crimes committed did not change much across different neighbourhoods. Although someone living in a highly populated area may see more reports of crime in the news, the actual crime rate between neighbourhoods is relatively constant. No matter where one lives in Toronto, they will experience a similar rate of crime – one neighbourhood is not much safer than any other. However, if you are hoping to keep your car…stay away from West Humber-Clairville and take a taxi to the airport! 
+To determine if one Toronto neighbourhood was safer than the others, a comparison of the number of crimes committed was compared across neighbourhoods. It was apparent that with an increase in population, there was an increase in the volume of crime. However, the rate of crimes committed did not change much across different neighbourhoods. Although someone living in a highly populated area may see more reports of crime in the news, the actual crime rate between neighbourhoods is relatively constant. No matter where one lives in Toronto, they will experience the same rate of crime – one neighbourhood is not much safer than any other.  However, if you are hoping to keep your car…stay away from West Humber-Clairville and take a taxi to the airport! 
 
 
 \newpage
